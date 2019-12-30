@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.app.appName.entity.UsersEntity" table="users"  dynamic-insert="true" dynamic-update="true">
+        <id name="id" column="id"><generator class="native"/></id>
+        <property name="userName" column="userName"/>
+        <property name="pwd" column="pwd"/>
+        <property name="name" column="name"/>
+        <property name="tel" column="tel"/>
+        <property name="createTime" column="createTime" update="false"/>
+        <property name="updateTime" column="updateTime" update="false"/>
+    </class>
+</hibernate-mapping>
