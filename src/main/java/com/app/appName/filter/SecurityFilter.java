@@ -39,7 +39,7 @@ public class SecurityFilter implements Filter {
 		String path = request.getContextPath();
 		String requestURI = request.getRequestURI();
 		requestURI = requestURI.substring(requestURI.indexOf(path) + path.length());
-		if ((requestURI.startsWith("/manage/") || requestURI.startsWith("/enterprise/")) && this.isNeedFilter(requestURI)) {
+		if ((requestURI.startsWith("/manage/") || requestURI.startsWith("/blog/")) && this.isNeedFilter(requestURI)) {
 			UsersEntity user = SessionManage.getUserEntity(session);
 
 			if (user == null) {

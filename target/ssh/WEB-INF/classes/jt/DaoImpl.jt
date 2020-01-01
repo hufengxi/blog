@@ -1,0 +1,17 @@
+package ${parentPackage}.dao.impl;
+
+import com.app.appName.core.BaseDaoImpl;
+import com.app.appName.dao.${className}Dao;
+import com.app.appName.entity.${className}Entity;
+import org.springframework.stereotype.Repository;
+<#list importPackages as importPackage> 
+import ${importPackage};
+</#list>
+
+/**
+ * @author boruonuo
+ */
+@Repository("${classSmallName}Dao")
+public class ${className}DaoImpl extends BaseDaoImpl<${className}Entity> implements ${className}Dao{
+
+}

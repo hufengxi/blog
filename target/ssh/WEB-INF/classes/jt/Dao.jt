@@ -1,0 +1,12 @@
+package ${parentPackage}.dao;
+
+import com.app.appName.core.BaseDao;
+<#list importPackages as importPackage> 
+import ${importPackage};
+</#list>
+
+/**
+ * @author boruonuo
+ */
+public interface ${className}Dao extends BaseDao<${className}Entity> {
+}

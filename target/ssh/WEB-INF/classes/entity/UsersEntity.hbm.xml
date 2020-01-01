@@ -4,13 +4,15 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.app.appName.entity.UsersEntity" table="users"  dynamic-insert="true" dynamic-update="true">
+    <class name="com.app.appName.entity.UsersEntity" table="users" schema="boruono_blog">
         <id name="id" column="id"><generator class="native"/></id>
-        <property name="userName" column="userName"/>
+        <property name="nickName" column="nickName"/>
         <property name="pwd" column="pwd"/>
-        <property name="name" column="name"/>
-        <property name="tel" column="tel"/>
+        <property name="mobile" column="mobile"/>
+        <property name="email" column="email"/>
+        <property name="type" column="type"/>
+        <property name="des" column="des"/>
+        <property name="status" column="status"/>
         <property name="createTime" column="createTime" update="false"/>
-        <property name="updateTime" column="updateTime" update="false"/>
     </class>
 </hibernate-mapping>

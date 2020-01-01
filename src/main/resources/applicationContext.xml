@@ -77,7 +77,6 @@
             <tx:method name="do*" propagation="REQUIRED" />
             <tx:method name="save*" propagation="REQUIRED" />
             <tx:method name="*" propagation="REQUIRED"  />
-            <tx:method name="*" rollback-for="Exception"  />
         </tx:attributes>
     </tx:advice>
 
