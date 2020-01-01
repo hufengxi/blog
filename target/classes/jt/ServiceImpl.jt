@@ -1,0 +1,28 @@
+package ${parentPackage}.service.impl;
+
+import com.app.appName.core.BaseDao;
+import com.app.appName.core.BaseServiceImpl;
+import com.app.appName.dao.${className}Dao;
+import com.app.appName.entity.${className}Entity;
+import com.app.appName.service.${className}Service;
+import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
+<#list importPackages as importPackage> 
+import ${importPackage};
+</#list>
+
+/**
+ * @author boruonuo
+ */
+@Service("${classSmallName}Service")
+public class ${className}ServiceImpl extends BaseServiceImpl<${className}Entity> implements ${className}Service{
+    /**
+    * 注入DAO
+    */
+    @Resource(name = "${classSmallName}Dao")
+    public void setDao(BaseDao<${className}Entity> dao) {
+        super.setDao(dao);
+    }
+    @Resource
+    public ${className}Dao ${classSmallName}Dao;
+}

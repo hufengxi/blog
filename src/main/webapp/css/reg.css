@@ -1,0 +1,245 @@
+*{
+    padding: 0; margin: 0;
+}
+body{
+    background-color: #efefef;
+}
+
+.header{
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    line-height: 60px;
+}
+
+.header> h1{
+    font-size: 18px;
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.header p{
+    float: right;
+    font-size: 14px;
+    margin-right: 50px;
+    color: lightgray;
+}
+
+.header p a{
+    text-decoration: none;
+    color: #333;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.main{
+    max-width: 1200px;
+    overflow: hidden;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 0 5px lightgrey;
+    border: 1px solid lightgrey;
+    margin: 50px auto 20px;
+    position: relative;
+}
+
+.main>.reg-title{
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid lightgrey;
+    line-height: 60px;
+}
+
+.main .reg-title .title{
+    color: #333;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.main .left-main{
+    width: 54.2%;
+    float: left;
+    margin-top: 30px;
+    padding-left: 8.3%;
+    border-right: 1px solid lightgrey;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.left-main .left-header{
+    width: 100%;
+    height: 30px;
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+
+.left-main .left-header .line{
+    width: 5px;
+    height: 30px;
+    background-color: #4D97FF;
+    display: inline-block;
+    float: left;
+}
+
+.left-main .left-header .title{
+    border-left:5px solid #4D97FF;
+    padding-left:20px;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    float: left;
+    margin-top: 5px;
+}
+
+.left-main .form-group{
+    padding-left: 25px;
+}
+
+.left-main .form-group .input-group{
+    width: 600px;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    display: inline-block;
+}
+
+.left-main .form-group .input-group:last-child{
+    margin-bottom: 20px;
+}
+
+.form-group .input-group label{
+    width: 20%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #5E5E5E;
+    display: inline-block;
+}
+
+.input-group .input{
+    width: 250px;
+    height: 40px;
+    line-height:40px;
+    border: 1px solid lightgrey;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 13px;
+    padding-right: 30px;
+    position:relative;
+    behavior: url(../css/PIE.htc);
+}
+
+.input-group .danger{
+    border: 1px solid red;
+
+}
+
+.input-group i{
+    display: none;
+    top:10px;
+    color: #5CD992;
+    position: absolute;
+    font-size: 20px;
+}
+
+
+input::-webkit-input-placeholder{
+    color: lightgrey;
+}
+
+input::-moz-placeholder{
+    color: lightgrey;
+}
+
+.input-group:before{
+    content: '*';
+    color: red;
+}
+.input-group1:after{
+    content: '';
+}
+.danger-tip{
+    display: none;
+    color: #EF6363;
+    font-size: 12px;
+    width: 120px;
+    height: 30px;
+    background-color: #FFEEEE;
+    line-height: 30px;
+    margin-left: -150px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.left-main>p{
+    font-size: 13px;
+    padding-left: 25px;
+    margin-bottom: 30px;
+}
+
+.left-main>p input{
+    margin-right: 5px;
+}
+
+.left-main>p span a{
+    text-decoration: none;
+    color: #4D97FF;
+}
+
+.left-main button{
+    width: 375px;
+    height: 40px;
+    color: white;
+    background: #4D97FF;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    margin-left: 25px;
+    cursor: pointer;
+}
+.left-main button:hover{
+    background:#79AEFF;
+}
+.main .right-main{
+    margin-left: 62.5%;
+    margin-top: 30px;
+    position: relative;
+    padding-left: 25px; 
+}
+
+.right-main .right-header{
+    width: 100%;
+    height: 30px;
+    margin-bottom: 30px;
+}
+
+.right-main .right-header .line{
+    width: 5px;
+    height: 30px;
+    background-color: #4D97FF;
+    display: inline-block;
+    float: left;
+}
+
+.right-main .right-header .title{
+    border-left:5px solid #4D97FF;
+    padding-left:20px;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    float: left;
+    margin-top: 5px;
+}
+
+.right-main .tips{
+    margin-left: 45px;
+    font-size: 14px;
+}
+
+.right-main .tips span{
+    color: red;
+}

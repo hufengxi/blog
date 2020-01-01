@@ -21,6 +21,34 @@
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
     </bean>
 
+    <mvc:annotation-driven>
+        <!-- mvc:message-converters 需要改成3.1.xsd -->
+        <mvc:message-converters register-defaults="true">
+            <!-- 使用FastJson来作为json输出的转换器 -->
+            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <property name="supportedMediaTypes" value="application/json" />
+                <property name="features">
+                    <array>
+                        <!-- 输出空字段 -->
+                        <value>WriteMapNullValue</value>
+                        <value>WriteNullStringAsEmpty</value>
+                        <!-- <value>PrettyFormat</value> -->
+                    </array>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+    <bean id="mappingJacksonHttpMessageConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/html;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+
 
 
 

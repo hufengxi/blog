@@ -224,6 +224,7 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
             tx.commit();
         }catch (Exception ex){
             ex.printStackTrace();
+
         }
         return reList;
     }

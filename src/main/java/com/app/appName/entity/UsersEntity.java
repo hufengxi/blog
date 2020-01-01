@@ -1,21 +1,18 @@
 package com.app.appName.entity;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Entity
-@Table(name = "users", schema = "ssh", catalog = "")
 public class UsersEntity {
     private int id;
-    private String userName;
+    private String nickName;
     private String pwd;
-    private String name;
-    private String tel;
+    private String mobile;
+    private String email;
+    private short type;
+    private String des;
+    private short status;
     private Timestamp createTime;
-    private Timestamp updateTime;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -24,18 +21,14 @@ public class UsersEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "userName")
-    public String getUserName() {
-        return userName;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
-    @Basic
-    @Column(name = "pwd")
     public String getPwd() {
         return pwd;
     }
@@ -44,44 +37,52 @@ public class UsersEntity {
         this.pwd = pwd;
     }
 
-    @Basic
-    @Column(name = "name")
-    public String getName() {
-        return name;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
-    @Basic
-    @Column(name = "tel")
-    public String getTel() {
-        return tel;
+    public String getEmail() {
+        return email;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    @Basic
-    @Column(name = "createTime")
+    public short getType() {
+        return type;
+    }
+
+    public void setType(short type) {
+        this.type = type;
+    }
+
+    public String getDes() {
+        return des;
+    }
+
+    public void setDes(String des) {
+        this.des = des;
+    }
+
+    public short getStatus() {
+        return status;
+    }
+
+    public void setStatus(short status) {
+        this.status = status;
+    }
+
     public Timestamp getCreateTime() {
         return createTime;
     }
 
     public void setCreateTime(Timestamp createTime) {
         this.createTime = createTime;
-    }
-
-    @Basic
-    @Column(name = "updateTime")
-    public Timestamp getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Timestamp updateTime) {
-        this.updateTime = updateTime;
     }
 
     @Override
@@ -92,12 +93,14 @@ public class UsersEntity {
         UsersEntity that = (UsersEntity) o;
 
         if (id != that.id) return false;
-        if (userName != null ? !userName.equals(that.userName) : that.userName != null) return false;
+        if (type != that.type) return false;
+        if (status != that.status) return false;
+        if (nickName != null ? !nickName.equals(that.nickName) : that.nickName != null) return false;
         if (pwd != null ? !pwd.equals(that.pwd) : that.pwd != null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (tel != null ? !tel.equals(that.tel) : that.tel != null) return false;
+        if (mobile != null ? !mobile.equals(that.mobile) : that.mobile != null) return false;
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
+        if (des != null ? !des.equals(that.des) : that.des != null) return false;
         if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) return false;
-        if (updateTime != null ? !updateTime.equals(that.updateTime) : that.updateTime != null) return false;
 
         return true;
     }
@@ -105,12 +108,14 @@ public class UsersEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (userName != null ? userName.hashCode() : 0);
+        result = 31 * result + (nickName != null ? nickName.hashCode() : 0);
         result = 31 * result + (pwd != null ? pwd.hashCode() : 0);
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (tel != null ? tel.hashCode() : 0);
+        result = 31 * result + (mobile != null ? mobile.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (int) type;
+        result = 31 * result + (des != null ? des.hashCode() : 0);
+        result = 31 * result + (int) status;
         result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
-        result = 31 * result + (updateTime != null ? updateTime.hashCode() : 0);
         return result;
     }
 }

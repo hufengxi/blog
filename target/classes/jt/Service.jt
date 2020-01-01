@@ -1,0 +1,12 @@
+package ${parentPackage}.service;
+
+import com.app.appName.core.BaseService;
+<#list importPackages as importPackage> 
+import ${importPackage};
+</#list>
+
+/**
+ * @author boruonuo
+ */
+public interface ${className}Service extends BaseService<${className}Entity> {
+}

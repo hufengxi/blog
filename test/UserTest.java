@@ -26,9 +26,6 @@ public class UserTest extends AbstractJUnit4SpringContextTests{
     @Test
     public void testSave(){
         UsersEntity usersEntity = new UsersEntity();
-        usersEntity.setName("name");
-        usersEntity.setUserName("userName");
-        usersEntity.setTel("12345678912");
         usersEntity.setPwd("pwd");
         usersService.save(usersEntity);
     }
@@ -44,9 +41,6 @@ public class UserTest extends AbstractJUnit4SpringContextTests{
     public void testUpdate(){
         UsersEntity usersEntity = new UsersEntity();
         usersEntity.setId(1);
-        usersEntity.setUserName("updateUserName");
-        usersEntity.setName("updateName");
-        usersEntity.setTel("12345678912");
         usersEntity.setPwd("updatePwd");
         usersService.update(usersEntity);
     }
@@ -54,17 +48,11 @@ public class UserTest extends AbstractJUnit4SpringContextTests{
     @Test
     public void testSaveOrUpdate(){
         UsersEntity usersEntitySave = new UsersEntity();
-        usersEntitySave.setUserName("UserName");
-        usersEntitySave.setName("Name");
-        usersEntitySave.setTel("12345678912");
         usersEntitySave.setPwd("Pwd");
         usersService.saveOrUpdate(usersEntitySave);
 
         UsersEntity usersEntityUpdate = new UsersEntity();
         usersEntityUpdate.setId(1);
-        usersEntityUpdate.setUserName("UserName");
-        usersEntityUpdate.setName("Name");
-        usersEntityUpdate.setTel("12345678912");
         usersEntityUpdate.setPwd("Pwd");
         usersService.saveOrUpdate(usersEntityUpdate);
     }
@@ -75,9 +63,6 @@ public class UserTest extends AbstractJUnit4SpringContextTests{
 
         for(int i = 0; i < 60000; i++){
             UsersEntity usersEntity = new UsersEntity();
-            usersEntity.setUserName("UserName"+i);
-            usersEntity.setName("Name"+i);
-            usersEntity.setTel("12345678912");
             usersEntity.setPwd("Pwd"+i);
             usersEntities.add(usersEntity);
         }
@@ -98,9 +83,6 @@ public class UserTest extends AbstractJUnit4SpringContextTests{
             if(i == 3){
                 usersEntity.setId(2002477);
             }
-            usersEntity.setUserName("UserName"+i);
-            usersEntity.setName("Name"+i);
-            usersEntity.setTel("12345678912");
             usersEntity.setPwd("Pwd"+i);
             usersEntities.add(usersEntity);
         }
