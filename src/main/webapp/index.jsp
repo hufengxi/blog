@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <div class="register_border" style="width: 400px;margin: 50px auto 0px;padding: 20px;">
+    <div class="register_border" style="width: 500px;margin: 50px auto 0px;padding: 20px;">
         <div class="user-info">
             <div style="height:70px;width:100%;">
                 <span id="title">注册新用户</span>
@@ -44,22 +44,27 @@
                 <p class="input-group">
                     <label for="nickname">昵称</label>
                     <input type="text" class="input" name="nickname" id="nickname" placeholder="昵称">
+                    <span class="danger-tip"></span>
                 </p>
                 <p class="input-group">
                     <label for="mobile">手机号</label>
                     <input type="text" class="input" name="mobile" id="mobile" placeholder="手机号">
+                    <span class="danger-tip"></span>
                 </p>
                 <p class="input-group">
                     <label for="email">邮箱</label>
                     <input type="text" class="input" name="email" id="email" placeholder="邮箱">
+                    <span class="danger-tip"></span>
                 </p>
                 <p class="input-group">
                     <label for="password">设置密码</label>
                     <input type="password" class="input" name="password" id="password" placeholder="密码">
+                    <span class="danger-tip"></span>
                 </p>
                 <p class="input-group">
                     <label for="confirmPwd">确认密码</label>
                     <input type="password" class="input" name="confirmPwd" id="confirmPwd" placeholder="确认密码">
+                    <span class="danger-tip"></span>
                 </p>
             </div>
             <button type="button" class="btn_register" onclick="registerNow()">注册</button>
@@ -71,7 +76,49 @@
 <script>
     var baseDomain = "<%=basePath%>";
 
+    function checkAll(){
+        if ($("#nickname").val() === "") {
+            $("#nickname").parent().children("span").html("请输入昵称");
+            $("#nickname").parent().children("span").css({"float": "right", "display": "inline"});
+            return false;
+        }else if($("#mobile").val().length != 11 || isNaN($("#mobile").val())){
+            $("#mobile").parent().children("span").html("请填写规范手机号");
+            $("#mobile").parent().children("span").css({"float":"right","display":"inline"});
+            return false;
+        }else if(checkEmail($("#email").val()) == ""){
+            $("#email").parent().children("span").html("请填写规范邮箱");
+            $("#email").parent().children("span").css({"float":"right","display":"inline"});
+            return false;
+        }else if($("#password").val() === ""){
+            $("#password").parent().children("span").html("请填写密码");
+            $("#password").parent().children("span").css({"float":"right","display":"inline"});
+            return false;
+        }else if($("#confirmPwd").val() === ""){
+            $("#confirmPwd").parent().children("span").html("请确认密码");
+            $("#confirmPwd").parent().children("span").css({"float":"right","display":"inline"});
+            return false;
+        }else if($("#password").val() != $("#confirmPwd").val()) {
+            $("#confirmPwd").parent().children("span").html("两次密码输入不一致");
+            $("#confirmPwd").parent().children("span").css({"float":"right","display":"inline"});
+            return false;
+        }
+        return true;
+    }
+
+    function checkEmail(str) {
+        var re = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+        if(re.test(str)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     function registerNow() {
+        if(!checkAll()){
+            return;
+        }
+
         $.ajax({
             url: baseDomain + "users/register",
             type: "post",
