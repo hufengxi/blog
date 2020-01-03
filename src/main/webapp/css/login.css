@@ -1,0 +1,52 @@
+#login .login_border {
+    border: 1px solid #e3e3e3;
+    border-bottom-color: #e0e0e0;
+    border-right-color: #ececec;
+    box-shadow: 1px 2px 1px rgba(0,0,0,.072);
+    -webkit-box-shadow: 1px 2px 1px rgba(0,0,0,.072);
+    -moz-box-shadow: 1px 2px 1px rgba(0,0,0,.072);
+    -o-box-shadow: 1px 2px 1px rgba(0,0,0,.072);
+}
+
+#login .userName {
+    background: url(../img/user.png) no-repeat;
+    background-position: 10px 10px;
+}
+
+#login .pwd {
+    background: url(../img/password.png) no-repeat;
+    background-position: 10px 10px;
+}
+
+#login .pic {
+    background: url(../img/pic.jpg) no-repeat;
+}
+
+#login .username,#login .pwd,#login .code {
+    text-indent: 40px!important;
+    padding-left: 0!important;
+}
+
+#login .btn_login {
+    width: 118px;
+    height: 38px;
+    background-color: #4D97FF;
+    cursor: pointer;
+    border-radius: 5px;
+    border: solid 1px #4D97FF;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+#login .btn_register {
+    width: 118px;
+    height: 38px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: solid 1px #4D97FF;
+    color: #4D97FF;
+    font-size: 14px;
+    margin-left: 10px;
+}

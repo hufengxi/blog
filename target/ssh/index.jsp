@@ -68,7 +68,7 @@
                 </p>
             </div>
             <button type="button" class="btn_register" onclick="registerNow()">注册</button>
-            <button class="btn_login" onclick="window.location.href='login'">立即登录</button>
+            <button class="btn_login" onclick="window.location.href='test/login'">立即登录</button>
         </div>
     </div>
 
@@ -136,6 +136,7 @@
                     alert(data.msg);
                 }
             },error:function (err) {
+                alert("注册失败");
             }
         });
     }

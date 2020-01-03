@@ -21,4 +21,10 @@ public class SessionManage {
 
         return user;
     }
+
+    public static void saveUserEntity(HttpSession session,UsersEntity mUserInfo){
+        if(session != null && mUserInfo != null){
+            session.setAttribute(SESSION_USER, mUserInfo);
+        }
+    }
 }

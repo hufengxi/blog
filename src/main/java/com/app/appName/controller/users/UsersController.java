@@ -4,6 +4,7 @@ import com.app.appName.config.ErrorCode;
 import com.app.appName.dto.ResultDto;
 import com.app.appName.entity.UsersEntity;
 import com.app.appName.service.UsersService;
+import com.app.appName.session.SessionManage;
 import com.app.appName.util.DateUtil;
 import com.app.appName.util.SecurityUtils;
 import org.springframework.stereotype.Controller;
@@ -62,6 +63,29 @@ public class UsersController {
             }else{
                 re.setCode(ErrorCode.MOBILE_REPEAT_CODE);
                 re.setMsg(ErrorCode.MOBILE_REPEAT_MSG);
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return re;
+    }
+
+    @RequestMapping(value = "login", method = RequestMethod.POST)
+    @ResponseBody
+    public ResultDto login(HttpSession session, String userName, String pwd){
+        ResultDto re = new ResultDto();
+        UsersEntity usersEntity = null;
+
+        try{
+            List<UsersEntity> usersEntityList = usersService.queryListByHql("from UsersEntity a where" +
+                    " (a.mobile = ? or a.email = ?) and a.pwd = ?", userName, userName, SecurityUtils.MD5to32(pwd));
+            if(usersEntityList != null && usersEntityList.size() > 0){
+                usersEntity = usersEntityList.get(0);
+                SessionManage.saveUserEntity(session, usersEntity);
+                re.setStatus(ResultDto.RESULT_STATUS_SUCCESS);
+            }else{
+                re.setCode(ErrorCode.USER_PWD_ERR_CODE);
+                re.setMsg(ErrorCode.USER_NO_EXIT_MSG);
             }
         }catch (Exception ex){
             ex.printStackTrace();
