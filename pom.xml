@@ -14,7 +14,7 @@
         <servlet.version>3.1.0</servlet.version>
         <annotation.version>1.2</annotation.version>
         <jdk.version>1.7</jdk.version>
-        <spring.version>4.3.1.RELEASE</spring.version>
+        <spring.version>5.3.18</spring.version>
         <hibernate.version>4.3.11.Final</hibernate.version>
         <mysql.version>5.1.25</mysql.version>
         <junit.version>4.12</junit.version>
